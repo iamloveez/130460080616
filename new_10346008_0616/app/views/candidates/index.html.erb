@@ -1,14 +1,42 @@
- <h1>成績列表</h1>
+ <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">國立台北超強大學</a>
+    </div>
 
-  <%= link_to "新增學生", new_candidate_path %>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">成績單 <span class="sr-only">(current)</span></a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
 
-  <table>
-    <thead>
+<h1>成績列表</h1>
+
+<h2><%= link_to "學生成績", new_candidate_path,class:"btn btn-success btn-xl" %></h2>
+
+<div style="color:#BABABA;">_______________________________________________________________________________________________________________________________________________</div>
+<br>
+<h5>分數級別說明 : 90分以上 S / 80~89 : A / 70~79 :B級 / 60~69 :C級 /未滿60:D級</h5>
+<br>
+    <table class="table table-hover">
       <tr>
         <td>姓名</td>
         <td>學號</td>
         <td>分數</td>
         <td>處理</td>
+        <td></td>
       </tr>
     </thead>
     <tbody>
@@ -19,8 +47,10 @@
         <td><%= candidate.score %></td>
         
         <td>
-          <%= link_to "編輯", edit_candidate_path(candidate) %>
-          <%= link_to "刪除", candidate_path(candidate), method: "delete", data: { confirm: "確認刪除" } %>
+          <%= link_to "編輯", edit_candidate_path(candidate),class:"btn btn-success btn-sm" %>
+         </td>
+        <td>
+          <%= link_to "刪除", candidate_path(candidate),class:"btn btn-danger btn-sm", method: "delete", data: { confirm: "確認刪除" } %>
         </td>
         
         
