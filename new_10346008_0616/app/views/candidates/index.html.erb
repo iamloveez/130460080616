@@ -1,0 +1,26 @@
+ <h1>成績列表</h1>
+
+  <%= link_to "新增學生", new_candidate_path %>
+
+  <table>
+    <thead>
+      <tr>
+        <td>姓名</td>
+        <td>學號</td>
+        <td>分數</td>
+        <td>處理</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @candidates.each do |candidate| %>
+      <tr>
+        <td><%= candidate.name %></td>
+        <td><%= candidate.student %></td>
+        <td><%= candidate.score %></td>
+        
+
+        
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
